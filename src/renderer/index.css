@@ -1,0 +1,4 @@
+/* Global styles for the renderer process. Add your CSS here. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
