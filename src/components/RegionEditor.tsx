@@ -193,7 +193,9 @@ export default function RegionEditor({
   enabledBackgrounds,
 }: RegionEditorProps) {
   const [name, setName] = useState(initialRegion?.name || '');
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState(
+    initialRegion?.description || '',
+  );
   const [racialDemographics, setRacialDemographics] = useState(
     initialRegion?.racialDemographics || {},
   );

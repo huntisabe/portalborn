@@ -2,7 +2,7 @@
   "barbarian": {
     "id": "barbarian",
     "name": "Barbarian",
-    "homebrew": false,
+
     "subclassLevel": 3,
     "prereqs": {
       "str": 13
@@ -11,7 +11,7 @@
       "berserker_barbarian": {
         "id": "berserker_barbarian",
         "name": "Berserker",
-        "homebrew": false,
+
         "magic": false,
         "divine": false,
         "prioritized": ["str", "con", "dex"],
@@ -22,7 +22,7 @@
   "bard": {
     "id": "bard",
     "name": "Bard",
-    "homebrew": false,
+
     "subclassLevel": 3,
     "prereqs": {
       "cha": 13
@@ -31,7 +31,7 @@
       "lore_bard": {
         "id": "lore_bard",
         "name": "Lore",
-        "homebrew": false,
+
         "magic": true,
         "divine": false,
         "prioritized": ["cha", "dex", "con"],
@@ -42,7 +42,7 @@
   "cleric": {
     "id": "cleric",
     "name": "Cleric",
-    "homebrew": false,
+
     "subclassLevel": 1,
     "prereqs": {
       "wis": 13
@@ -51,7 +51,7 @@
       "life_cleric": {
         "id": "life_cleric",
         "name": "Life",
-        "homebrew": false,
+
         "magic": true,
         "divine": true,
         "prioritized": ["wis", "con"],
@@ -62,7 +62,7 @@
   "druid": {
     "id": "druid",
     "name": "Druid",
-    "homebrew": false,
+
     "subclassLevel": 2,
     "prereqs": {
       "wis": 13
@@ -71,7 +71,7 @@
       "land_druid": {
         "id": "land_druid",
         "name": "Land",
-        "homebrew": false,
+
         "magic": true,
         "divine": false,
         "prioritized": ["wis", "con", "dex"],
@@ -86,7 +86,7 @@
   "fighter": {
     "id": "fighter",
     "name": "Fighter",
-    "homebrew": false,
+
     "subclassLevel": 3,
     "prereqs": {
       "or": {
@@ -98,7 +98,7 @@
       "champion_fighter": {
         "id": "champion_fighter",
         "name": "Champion",
-        "homebrew": false,
+
         "magic": false,
         "divine": false,
         "prioritized": ["str", "con"],
@@ -113,7 +113,7 @@
   "monk": {
     "id": "monk",
     "name": "Monk",
-    "homebrew": false,
+
     "subclassLevel": 3,
     "prereqs": {
       "and": {
@@ -125,7 +125,7 @@
       "openhand_monk": {
         "id": "openhand_monk",
         "name": "Open Hand",
-        "homebrew": false,
+
         "magic": false,
         "divine": false,
         "prioritized": ["dex", "wis", "con"],
@@ -136,7 +136,7 @@
   "paladin": {
     "id": "paladin",
     "name": "Paladin",
-    "homebrew": false,
+
     "subclassLevel": 3,
     "prereqs": {
       "and": {
@@ -148,7 +148,7 @@
       "devotion_paladin": {
         "id": "devotion_paladin",
         "name": "Devotion",
-        "homebrew": false,
+
         "magic": true,
         "divine": true,
         "prioritized": ["str", "con", "cha"],
@@ -163,7 +163,7 @@
   "ranger": {
     "id": "ranger",
     "name": "Ranger",
-    "homebrew": false,
+
     "subclassLevel": 3,
     "prereqs": {
       "and": {
@@ -175,7 +175,7 @@
       "hunter_ranger": {
         "id": "hunter_ranger",
         "name": "Hunter",
-        "homebrew": false,
+
         "magic": true,
         "divine": false,
         "prioritized": ["dex", "con", "wis"],
@@ -186,7 +186,7 @@
   "rogue": {
     "id": "rogue",
     "name": "Rogue",
-    "homebrew": false,
+
     "subclassLevel": 3,
     "prereqs": {
       "dex": 13
@@ -195,7 +195,7 @@
       "thief_rogue": {
         "id": "thief_rogue",
         "name": "Thief",
-        "homebrew": false,
+
         "magic": false,
         "divine": false,
         "prioritized": ["dex", "con"],
@@ -206,7 +206,7 @@
   "sorcerer": {
     "id": "sorcerer",
     "name": "Sorcerer",
-    "homebrew": false,
+
     "subclassLevel": 1,
     "prereqs": {
       "cha": 13
@@ -215,7 +215,7 @@
       "draconic_sorcerer": {
         "id": "draconic_sorcerer",
         "name": "Draconic Bloodline",
-        "homebrew": false,
+
         "magic": true,
         "divine": false,
         "prioritized": ["cha", "con", "dex"],
@@ -226,7 +226,7 @@
   "warlock": {
     "id": "warlock",
     "name": "Warlock",
-    "homebrew": false,
+
     "subclassLevel": 1,
     "prereqs": {
       "cha": 13
@@ -235,7 +235,7 @@
       "fiend_warlock": {
         "id": "fiend_warlock",
         "name": "Fiend",
-        "homebrew": false,
+
         "magic": true,
         "divine": false,
         "prioritized": ["cha", "dex", "con"],
@@ -246,7 +246,7 @@
   "wizard": {
     "id": "wizard",
     "name": "Wizard",
-    "homebrew": false,
+
     "subclassLevel": 2,
     "prereqs": {
       "int": 13
@@ -255,7 +255,7 @@
       "evoker_wizard": {
         "id": "evoker_wizard",
         "name": "Evocation",
-        "homebrew": false,
+
         "magic": true,
         "divine": false,
         "prioritized": ["int", "con", "dex"],

@@ -7,6 +7,7 @@ interface SettingsContextType {
   getWorldById: (id: string) => World | undefined;
   addWorld: (world: World) => void;
   updateWorld: (world: World) => void;
+  deleteWorld: (id: string) => void;
 }
 
 const SettingsContext = createContext<SettingsContextType | undefined>(
@@ -24,7 +25,6 @@ function SettingsProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // Persist to localStorage whenever worlds change
   useEffect(() => {
     localStorage.setItem('worlds', JSON.stringify(worlds));
   }, [worlds]);
@@ -42,14 +42,33 @@ function SettingsProvider({ children }: { children: React.ReactNode }) {
     setWorlds((prev) => prev.map((w) => (w.id === updated.id ? updated : w)));
   }, []);
 
+  const deleteWorld = React.useCallback((id: string) => {
+    if (
+      window.confirm(
+        'Are you sure you want to delete this world? This action cannot be undone.',
+      )
+    ) {
+      setWorlds((prevWorlds) => {
+        const updatedWorlds = prevWorlds.filter((w) => w.id !== id);
+        try {
+          localStorage.setItem('worlds', JSON.stringify(updatedWorlds));
+        } catch (error) {
+          console.error('Error saving worlds:', error);
+        }
+        return updatedWorlds;
+      });
+    }
+  }, []);
+
   const contextValue = React.useMemo(
     () => ({
       worlds,
       getWorldById,
       addWorld,
       updateWorld,
+      deleteWorld,
     }),
-    [worlds, getWorldById, addWorld, updateWorld],
+    [worlds, getWorldById, addWorld, updateWorld, deleteWorld],
   );
 
   return (

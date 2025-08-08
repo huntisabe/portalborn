@@ -2,7 +2,7 @@
   "background_acolyte": {
     "id": "background_acolyte",
     "name": "Acolyte",
-    "homebrew": false,
+
     "divine": true,
     "abilityScores": ["int", "wis", "cha"],
     "personality": [
@@ -67,7 +67,7 @@
   "background_criminal": {
     "id": "background_criminal",
     "name": "Criminal",
-    "homebrew": false,
+
     "divine": false,
     "abilityScores": ["dex", "con", "int"],
     "personality": [
@@ -126,7 +126,7 @@
   "background_sage": {
     "id": "background_sage",
     "name": "Sage",
-    "homebrew": false,
+
     "divine": false,
     "abilityScores": ["con", "int", "wis"],
     "personality": [
@@ -201,7 +201,7 @@
   "background_soldier": {
     "id": "background_soldier",
     "name": "Soldier",
-    "homebrew": false,
+
     "divine": false,
     "abilityScores": ["str", "dex", "con"],
     "personality": [

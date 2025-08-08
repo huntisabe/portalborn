@@ -30,7 +30,6 @@ import './index.css';
 import PortalLayout from './PortalLayout';
 import WorldBuilder from '../pages/WorldList';
 import WorldEditor from '../pages/WorldEditor';
-import WorldView from '../pages/WorldView';
 import { SettingsProvider } from '../context/SettingsContext';
 
 function Home() {
@@ -58,7 +57,6 @@ function App() {
             <Route path="/generator" element={<Generator />} />
             <Route path="/homebrew" element={<HomebrewManager />} />
             <Route path="/world/new" element={<WorldEditor />} />
-            <Route path="/worlds/:worldId" element={<WorldView />} />
             <Route path="/world/:worldId/edit" element={<WorldEditor />} />
           </Routes>
         </PortalLayout>
