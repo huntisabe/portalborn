@@ -2,7 +2,6 @@
   "background_acolyte": {
     "id": "background_acolyte",
     "name": "Acolyte",
-    "homebrew": false,
     "divine": true,
     "skillProficencies": [],
     "featureId": "shelter_of_faithful",

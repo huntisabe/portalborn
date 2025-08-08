@@ -6,8 +6,8 @@ interface ConfirmModalProps {
   onConfirm: () => void;
   onCancel: () => void;
   message: string;
-  confirmText?: string;
-  cancelText?: string;
+  confirmText: string;
+  cancelText: string;
 }
 
 export default function ConfirmModal({

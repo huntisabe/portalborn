@@ -2,7 +2,6 @@
   "dragonborn": {
     "id": "dragonborn",
     "name": "Dragonborn",
-    "homebrew": false,
     "ageRange": {
       "mature": 15,
       "max": 80
@@ -14,60 +13,49 @@
     "subraces": {
       "black_dragonborn": {
         "id": "black_dragonborn",
-        "name": "Black",
-        "homebrew": false
+        "name": "Black"
       },
       "blue_dragonborn": {
         "id": "blue_dragonborn",
-        "name": "Blue",
-        "homebrew": false
+        "name": "Blue"
       },
       "brass_dragonborn": {
         "id": "brass_dragonborn",
-        "name": "Brass",
-        "homebrew": false
+        "name": "Brass"
       },
       "bronze_dragonborn": {
         "id": "bronze_dragonborn",
-        "name": "Bronze",
-        "homebrew": false
+        "name": "Bronze"
       },
       "copper_dragonborn": {
         "id": "copper_dragonborn",
-        "name": "Copper",
-        "homebrew": false
+        "name": "Copper"
       },
       "gold_dragonborn": {
         "id": "gold_dragonborn",
-        "name": "Gold",
-        "homebrew": false
+        "name": "Gold"
       },
       "green_dragonborn": {
         "id": "green_dragonborn",
-        "name": "Green",
-        "homebrew": false
+        "name": "Green"
       },
       "red_dragonborn": {
         "id": "red_dragonborn",
-        "name": "Red",
-        "homebrew": false
+        "name": "Red"
       },
       "silver_dragonborn": {
         "id": "silver_dragonborn",
-        "name": "Silver",
-        "homebrew": false
+        "name": "Silver"
       },
       "white_dragonborn": {
         "id": "white_dragonborn",
-        "name": "White",
-        "homebrew": false
+        "name": "White"
       }
     }
   },
   "dwarf": {
     "id": "dwarf",
     "name": "Dwarf",
-    "homebrew": false,
     "ageRange": {
       "mature": 50,
       "max": 300
@@ -79,7 +67,6 @@
       "hill_dwarf": {
         "id": "hill_dwarf",
         "name": "Hill",
-        "homebrew": false,
         "bonuses": {
           "wis": 1
         }
@@ -89,7 +76,6 @@
   "elf": {
     "id": "elf",
     "name": "Elf",
-    "homebrew": false,
     "ageRange": {
       "mature": 50,
       "max": 650
@@ -101,7 +87,6 @@
       "high_elf": {
         "id": "high_elf",
         "name": "High",
-        "homebrew": false,
         "bonuses": {
           "int": 1
         }
@@ -111,7 +96,7 @@
   "gnome": {
     "id": "gnome",
     "name": "Gnome",
-    "homebrew": false,
+
     "ageRange": {
       "mature": 20,
       "max": 400
@@ -123,7 +108,6 @@
       "rock_gnome": {
         "id": "rock_gnome",
         "name": "Rock",
-        "homebrew": false,
         "bonuses": {
           "con": 1
         }
@@ -133,7 +117,6 @@
   "halfling": {
     "id": "halfling",
     "name": "Halfling",
-    "homebrew": false,
     "ageRange": {
       "mature": 20,
       "max": 125
@@ -145,7 +128,6 @@
       "lightfoot_halfling": {
         "id": "lightfoot_halfling",
         "name": "Lightfoot",
-        "homebrew": false,
         "bonuses": {
           "cha": 1
         }
@@ -155,7 +137,6 @@
   "half_elf": {
     "id": "half_elf",
     "name": "Half-Elf",
-    "homebrew": false,
     "ageRange": {
       "mature": 15,
       "max": 120
@@ -164,7 +145,6 @@
   "half_orc": {
     "id": "half_orc",
     "name": "Half-Orc",
-    "homebrew": false,
     "ageRange": {
       "mature": 15,
       "max": 80
@@ -177,7 +157,6 @@
   "human": {
     "id": "human",
     "name": "Human",
-    "homebrew": false,
     "ageRange": {
       "mature": 15,
       "max": 80
@@ -194,7 +173,6 @@
   "tiefling": {
     "id": "tiefling",
     "name": "Tiefling",
-    "homebrew": false,
     "ageRange": {
       "mature": 15,
       "max": 80

@@ -1,47 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { World } from '../types/World';
+import { useSettings } from '../context/SettingsContext';
 
 function WorldList() {
   const navigate = useNavigate();
-  const [worlds, setWorlds] = useState<World[]>([]);
-  // Load worlds from localStorage
-  useEffect(() => {
-    try {
-      const savedWorlds = localStorage.getItem('worlds');
-      if (savedWorlds) {
-        setWorlds(JSON.parse(savedWorlds));
-      }
-    } catch (error) {
-      console.error('Error loading worlds:', error);
-    }
-  }, []);
+  const { worlds, deleteWorld } = useSettings();
 
   const handleEdit = (world: World) => {
     navigate(`/world/${world.id}/edit`);
-  };
-
-  const handleView = (world: World) => {
-    navigate(`/worlds/${world.id}`);
-  };
-
-  const handleDelete = (id: string) => {
-    // Confirm before deleting
-    if (
-      window.confirm(
-        'Are you sure you want to delete this world? This action cannot be undone.',
-      )
-    ) {
-      const updatedWorlds = worlds.filter((w) => w.id !== id);
-      setWorlds(updatedWorlds);
-
-      // Update localStorage
-      try {
-        localStorage.setItem('worlds', JSON.stringify(updatedWorlds));
-      } catch (error) {
-        console.error('Error saving worlds:', error);
-      }
-    }
   };
 
   const handleCreateNew = () => {
@@ -87,25 +54,31 @@ function WorldList() {
                 <td className="p-2 border-b space-x-2">
                   <button
                     type="button"
-                    onClick={() => handleView(world)}
-                    className="bg-blue-500 text-white px-3 py-1 rounded mr-1"
-                  >
-                    View
-                  </button>
-                  <button
-                    type="button"
                     onClick={() => handleEdit(world)}
                     className="bg-yellow-500 text-white px-3 py-1 rounded mr-1"
                   >
                     Edit
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => handleDelete(world.id)}
-                    className="bg-red-600 text-white px-3 py-1 rounded"
-                  >
-                    Delete
-                  </button>
+                  <div>
+                    {worlds.length === 0 ? (
+                      <p>No worlds yet.</p>
+                    ) : (
+                      worlds.map((w) => (
+                        <div
+                          key={w.id}
+                          className="flex justify-between items-center"
+                        >
+                          <button
+                            type="button"
+                            onClick={() => deleteWorld(w.id)}
+                            className="bg-red-600 text-white px-2 py-1 rounded"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      ))
+                    )}
+                  </div>
                 </td>
               </tr>
             ))}
