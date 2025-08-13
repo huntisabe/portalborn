@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { World } from '../types/World';
 import { Region } from '../types/Region';
+import { NameList } from '../types/NameList';
 import Tabs from '../components/Tabs';
 import { Option } from '../components/OptionSelector';
 
@@ -11,6 +12,7 @@ import WorldOptions from '../components/WorldEditor/WorldOptions';
 import WorldRegions from '../components/WorldEditor/WorldRegions';
 import { PantheonOption } from '../types/PantheonOption';
 import WorldPantheon from '../components/WorldEditor/WorldPantheon';
+import WorldNameLists from '../components/WorldEditor/WorldNameLists';
 
 type Ruleset = '5e-2014' | '5e-2024';
 
@@ -64,12 +66,10 @@ function WorldEdit() {
   const [enabledBackgrounds, setEnabledBackgrounds] = useState<string[]>([]);
 
   const [regions, setRegions] = useState<Region[]>([]);
-  const [editingRegion, setEditingRegion] = useState<Region | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [regionToDelete, setRegionToDelete] = useState<Region | null>(null);
-  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 
   const [pantheon, setPantheon] = useState<PantheonOption[]>([]);
+
+  const [nameLists, setNameLists] = useState<NameList[]>([]);
 
   const navigate = useNavigate();
 
@@ -91,6 +91,7 @@ function WorldEdit() {
       setEnabledBackgrounds(world.enabledBackgrounds);
       setRegions(world.regions);
       setPantheon(world.pantheon);
+      setNameLists(world.nameLists);
     } else {
       console.error(`World with ID ${worldId} not found`);
       alert('The world you are trying to edit does not exist.');
@@ -245,7 +246,8 @@ function WorldEdit() {
       enabledRaces,
       enabledBackgrounds,
       regions,
-      pantheon: [],
+      pantheon,
+      nameLists,
     };
 
     console.log(isEditing ? 'Updating world:' : 'Creating world:', worldData);
@@ -312,14 +314,6 @@ function WorldEdit() {
         <WorldRegions
           regions={regions}
           setRegions={setRegions}
-          editingRegion={editingRegion}
-          setEditingRegion={setEditingRegion}
-          regionToDelete={regionToDelete}
-          setRegionToDelete={setRegionToDelete}
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
-          isConfirmOpen={isConfirmOpen}
-          setIsConfirmOpen={setIsConfirmOpen}
           allRaces={allRaces}
           enabledRaces={enabledRaces}
           allBackgrounds={allBackgrounds}
@@ -333,6 +327,21 @@ function WorldEdit() {
           setPantheon={setPantheon}
           regions={regions}
           enabledDomains={allDomains}
+        />
+      )}
+
+      {activeTab === 'names' && (
+        <WorldNameLists
+          nameLists={nameLists}
+          setNameLists={setNameLists}
+          availableRaces={allRaces.filter((race) =>
+            enabledRaces.includes(race.id),
+          )}
+          availableRegions={regions.map((region) => ({
+            id: region.id,
+            label: region.name,
+            disabled: false,
+          }))}
         />
       )}
 

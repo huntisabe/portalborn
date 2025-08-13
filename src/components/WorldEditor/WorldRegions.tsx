@@ -8,14 +8,6 @@ import { Option } from '../OptionSelector';
 interface WorldRegionsProps {
   regions: Region[];
   setRegions: React.Dispatch<React.SetStateAction<Region[]>>;
-  editingRegion: Region | null;
-  setEditingRegion: React.Dispatch<React.SetStateAction<Region | null>>;
-  regionToDelete: Region | null;
-  setRegionToDelete: React.Dispatch<React.SetStateAction<Region | null>>;
-  isModalOpen: boolean;
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  isConfirmOpen: boolean;
-  setIsConfirmOpen: React.Dispatch<React.SetStateAction<boolean>>;
   allRaces: Option[];
   enabledRaces: string[];
   allBackgrounds: Option[];
@@ -25,19 +17,18 @@ interface WorldRegionsProps {
 export default function WorldRegions({
   regions,
   setRegions,
-  editingRegion,
-  setEditingRegion,
-  regionToDelete,
-  setRegionToDelete,
-  isModalOpen,
-  setIsModalOpen,
-  isConfirmOpen,
-  setIsConfirmOpen,
   allRaces,
   enabledRaces,
   allBackgrounds,
   enabledBackgrounds,
 }: WorldRegionsProps) {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isConfirmOpen, setIsConfirmOpen] = React.useState(false);
+  const [editingRegion, setEditingRegion] = React.useState<Region | null>(null);
+  const [regionToDelete, setRegionToDelete] = React.useState<Region | null>(
+    null,
+  );
+
   const handleAddRegion = () => {
     setEditingRegion(null);
     setIsModalOpen(true);

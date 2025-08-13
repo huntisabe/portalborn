@@ -6,8 +6,8 @@ interface Race {
 }
 
 interface Props {
-  enabledRaces: Race[]; // races enabled in the world or region
-  raceDistribution: { [raceId: string]: number }; // current percentages
+  enabledRaces: Race[];
+  raceDistribution: { [raceId: string]: number };
   onChange: (updatedDistribution: { [raceId: string]: number }) => void;
 }
 
@@ -20,9 +20,7 @@ export default function RacialDemographicsCustomizer({
     [raceId: string]: number;
   }>({});
 
-  // Initialize local state on mount or when raceDistribution changes
   useEffect(() => {
-    // Start with raceDistribution, fill missing races with 0
     const initial = enabledRaces.reduce(
       (acc, race) => {
         acc[race.id] = raceDistribution[race.id] ?? 0;

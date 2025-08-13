@@ -19,7 +19,6 @@ export default function WorldPantheon({
   regions,
   enabledDomains,
 }: WorldPantheonProps) {
-  // Modal and selection states
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isConfirmOpen, setIsConfirmOpen] = React.useState(false);
   const [editingPantheon, setEditingPantheon] =
@@ -27,25 +26,21 @@ export default function WorldPantheon({
   const [pantheonToDelete, setPantheonToDelete] =
     React.useState<PantheonOption | null>(null);
 
-  // Add new entry
   const handleAddPantheon = () => {
     setEditingPantheon(null);
     setIsModalOpen(true);
   };
 
-  // Edit existing entry
   const handleEditPantheon = (pnthn: PantheonOption) => {
     setEditingPantheon(pnthn);
     setIsModalOpen(true);
   };
 
-  // Delete entry (open confirm)
   const handleDeletePantheonClick = (pnthn: PantheonOption) => {
     setPantheonToDelete(pnthn);
     setIsConfirmOpen(true);
   };
 
-  // Confirm deletion
   const handleConfirmDelete = () => {
     if (pantheonToDelete) {
       setPantheon((prev) => prev.filter((p) => p.id !== pantheonToDelete.id));
@@ -54,13 +49,11 @@ export default function WorldPantheon({
     setPantheonToDelete(null);
   };
 
-  // Cancel deletion
   const handleCancelDelete = () => {
     setIsConfirmOpen(false);
     setPantheonToDelete(null);
   };
 
-  // Save entry
   const handleSavePantheon = (entry: PantheonOption) => {
     setPantheon((prev) => {
       const exists = prev.find((p) => p.id === entry.id);
@@ -72,12 +65,10 @@ export default function WorldPantheon({
     setIsModalOpen(false);
   };
 
-  // Cancel editing
   const handleCancel = () => {
     setIsModalOpen(false);
   };
 
-  // In this setup, `enabledDomains` is already filtered from ruleset data by parent
   const allDomains = React.useMemo(() => enabledDomains, [enabledDomains]);
 
   return (
@@ -123,7 +114,6 @@ export default function WorldPantheon({
         Add Pantheon Entry
       </button>
 
-      {/* Modal for adding/editing */}
       <Modal isOpen={isModalOpen} onClose={handleCancel}>
         <PantheonEntryEditor
           initialEntry={editingPantheon || undefined}
@@ -137,7 +127,6 @@ export default function WorldPantheon({
         />
       </Modal>
 
-      {/* Confirm deletion */}
       <ConfirmModal
         isOpen={isConfirmOpen}
         onConfirm={handleConfirmDelete}
