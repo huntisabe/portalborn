@@ -40,7 +40,6 @@ function WorldList() {
           <thead>
             <tr className="bg-gray-100 text-left">
               <th className="p-2 border-b">Name</th>
-              <th className="p-2 border-b">Description</th>
               <th className="p-2 border-b">Actions</th>
             </tr>
           </thead>
@@ -48,36 +47,24 @@ function WorldList() {
             {worlds.map((world) => (
               <tr key={world.id}>
                 <td className="p-2 border-b">{world.name}</td>
-                <td className="p-2 border-b text-gray-600">
-                  {world.description}
-                </td>
                 <td className="p-2 border-b space-x-2">
-                  <button
-                    type="button"
-                    onClick={() => handleEdit(world)}
-                    className="bg-yellow-500 text-white px-3 py-1 rounded mr-1"
-                  >
-                    Edit
-                  </button>
-                  <div>
-                    {worlds.length === 0 ? (
-                      <p>No worlds yet.</p>
-                    ) : (
-                      worlds.map((w) => (
-                        <div
-                          key={w.id}
-                          className="flex justify-between items-center"
-                        >
-                          <button
-                            type="button"
-                            onClick={() => deleteWorld(w.id)}
-                            className="bg-red-600 text-white px-2 py-1 rounded"
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      ))
-                    )}
+                  <div className="flex space-x-2">
+                    <button
+                      type="button"
+                      onClick={() => handleEdit(world)}
+                      className="bg-yellow-500 text-white px-3 py-1 rounded mr-1"
+                    >
+                      Edit
+                    </button>
+                    <div>
+                      <button
+                        type="button"
+                        onClick={() => deleteWorld(world.id)}
+                        className="bg-red-600 text-white px-2 py-1 rounded"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                 </td>
               </tr>
