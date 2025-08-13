@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import OptionSelector, { Option } from './OptionSelector';
 import { PantheonOption } from '../types/PantheonOption';
+import ThreeColumnSelector from './ThreeColumnSelector';
 
 const ALL_ALIGNMENTS = [
   'Lawful Good',
@@ -106,7 +107,7 @@ export default function PantheonEntryEditor({
         }}
       />
 
-      <OptionSelector
+      <ThreeColumnSelector
         title="Alignments"
         options={ALL_ALIGNMENTS.map((a) => ({ id: a, label: a }))}
         selected={alignments}

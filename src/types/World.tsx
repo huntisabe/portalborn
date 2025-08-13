@@ -1,5 +1,6 @@
 import { Region } from './Region';
 import { PantheonOption } from './PantheonOption';
+import { NameList } from './NameList';
 
 export interface World {
   id: string;
@@ -13,4 +14,5 @@ export interface World {
   enabledBackgrounds: string[];
   regions: Region[];
   pantheon: PantheonOption[];
+  nameLists: NameList[];
 }
